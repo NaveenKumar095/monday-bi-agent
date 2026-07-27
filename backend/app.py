@@ -6,7 +6,7 @@ from monday_client import get_board_items
 from config import DEALS_BOARD_ID
 from business import pipeline_summary, leadership_summary
 from router import detect_intent
-from ai import ask_gemini
+from ai import ask_ai
 from models import ChatRequest, ChatResponse
 from chat_service import process_chat
 
@@ -91,7 +91,7 @@ Instructions:
 7. Use only the supplied data.
 """
 
-    answer = ask_gemini(prompt)
+    answer = ask_ai(prompt)
 
     return {
         "question": question,
@@ -101,7 +101,7 @@ Instructions:
 
 @app.get("/test-ai")
 def test_ai():
-    response = ask_gemini("Say Hello from Gemini in one sentence.")
+    response = ask_ai("Say Hello from Groq in one sentence.")
     return {"response": response}
 
 @app.post("/chat", response_model=ChatResponse)

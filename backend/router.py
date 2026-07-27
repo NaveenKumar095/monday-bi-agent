@@ -1,4 +1,4 @@
-from ai import ask_gemini
+from ai import ask_ai
 
 
 AVAILABLE_INTENTS = [
@@ -29,7 +29,7 @@ Question:
 {question}
 """
 
-    intent = ask_gemini(prompt).strip().lower()
+    intent = ask_ai(prompt).strip().lower()
 
     if intent not in AVAILABLE_INTENTS:
         return "unknown"

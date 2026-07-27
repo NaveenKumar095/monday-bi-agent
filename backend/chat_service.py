@@ -1,7 +1,7 @@
 from services import load_all_data
 from router import detect_intent
 from business import pipeline_summary, leadership_summary
-from ai import ask_gemini
+from ai import ask_ai
 
 
 def process_chat(question: str):
@@ -48,7 +48,7 @@ Instructions:
 - Use only the supplied data.
 """
 
-    answer = ask_gemini(prompt)
+    answer = ask_ai(prompt)
 
     return {
         "intent": intent,
